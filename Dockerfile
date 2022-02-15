@@ -18,7 +18,7 @@ COPY --from=builder /my-proyect/.next ./.next
 COPY --from=builder /my-proyect/node_modules ./node_modules
 COPY --from=builder /my-proyect/package.json ./package.json
 
-EXPOSE 3000
+EXPOSE 8080
 CMD ["npm", "start"]
 
 
