@@ -1,16 +1,16 @@
-FROM node:lts as dependencies
+FROM public.ecr.aws/bitnami/node:latest as dependencies
 WORKDIR /my-proyect
 COPY package.json package-lock.json ./
 RUN ["npm",  "install"]
 
-FROM node:lts as builder
+FROM public.ecr.aws/bitnami/node:latest as builder
 WORKDIR /my-proyect
 COPY [".", "."]
 COPY --from=dependencies /my-proyect/node_modules ./node_modules
 RUN ["npm", "run", "build"]
 
 
-FROM node:lts as runner
+FROM public.ecr.aws/bitnami/node:latest as runner
 WORKDIR /my-proyect
 ENV NODE_ENV production 
 COPY --from=builder /my-proyect/public ./public
