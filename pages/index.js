@@ -4,12 +4,12 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>I'm the best. Just facts</title>
+        <title>{"I'm the best. Just facts"}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <h1 className="title">I'm the best. Just facts :)</h1>
+        <h1 className="title">{"I'm the best. Just facts"}</h1>
 
         <p className="description">
           Get started by editing <code>pages/index.js</code>
