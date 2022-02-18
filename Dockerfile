@@ -7,7 +7,7 @@ FROM public.ecr.aws/bitnami/node:latest as builder
 WORKDIR /my-proyect
 COPY [".", "."]
 COPY --from=dependencies /my-proyect/node_modules ./node_modules
-RUN ["npm", "run", "build"]
+RUN ["npm", "run", "export"]
 
 
 FROM public.ecr.aws/bitnami/node:latest as runner
